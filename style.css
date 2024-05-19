@@ -1,0 +1,1579 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Kontener na naglowek */
+#ramkanaglowek {
+  background-image: radial-gradient(
+    circle at 68.88% 53.33%,
+    #8adef0 0,
+    #67cbe2 25%,
+    #37b5d3 50%,
+    #00a0c4 75%,
+    #008db8 100%
+  );
+  height: 19vh;
+  width: 100%;
+  min-width: 100%;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.5);
+}
+/* Kontener na napis po lewej stronie naglowka */
+#ramkaLewanaglowek {
+  height: 100%;
+  float: left;
+  width: 25%;
+  color: white;
+}
+/* Kontener na liste w naglowku (chyba niepotrzebny)*/
+#ramkaPrawanaglowek {
+  position: relative;
+  float: left;
+  margin-left: 23%;
+  width: 50%;
+  height: 100%;
+  text-align: right;
+}
+/* edycja napisu w naglowku */
+.napisnaglowek {
+  padding-left: 5%;
+  text-shadow: -4px 3px 1px rgb(27, 32, 6);
+  font-size: 171%;
+  font-family: "Hind Siliguri", sans-serif;
+}
+/* podkreslenie slowa "zrozumiale" w napisie w naglowku*/
+.napisnaglowek span {
+  text-decoration: underline 4px;
+}
+/* edycja napisu imie i nazwisko w naglowku */
+#imie {
+  padding-top: 3%;
+  margin-left: 5%;
+  margin-right: 0;
+  text-shadow: -5px 4px 5px rgb(27, 32, 6);
+  font-size: 170%;
+  font-family: "Hind Siliguri", sans-serif;
+}
+/* Kontener na liste w naglowku */
+#ramkalistanaglowek {
+  list-style-type: none;
+  padding: 10px;
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+}
+/* Kontenery poszczegolnych elementow listy */
+#ramkalistanaglowek .listanaglowek {
+  display: inline-block;
+  border-right: 2px solid black;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#ramkalistanaglowek .listanaglowek:nth-child(4) {
+  border: none;
+}
+/* edycja poszczegolnych elementow listy */
+.listanaglowek a {
+  display: block;
+  text-decoration: none;
+  font-size: 30px;
+
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+}
+/* Powiekszenie i podkreslenie elementu listy w naglowku gdy kursor znajduje sie na elemencie */
+.listanaglowek a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+/* Wywolanie animacji klikniecia gdy element listy w naglowku zostal klikniety */
+.listanaglowek a:active {
+  animation: clickAnimation 0.3s;
+}
+/* Ustawienie tla strony */
+body {
+  background-image: url("zdjecia/tlo1.jpg");
+  background-size: cover;
+}
+/* Animacja klikniecia na element (zmniejsza sie troche) */
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Animcja pojawienia się elementu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Kontener na ramki na stronie glownej*/
+#STnapis {
+  position: relative;
+  width: 70%;
+  padding-top: 4vh;
+  padding-bottom: 10vh;
+  overflow: auto;
+  float: left;
+}
+/* kontener na lewą (pierwszą) ramke*/
+#lewaramkawidoczna {
+  box-shadow: 0px 0px 60px 15px rgba(0, 0, 0, 0.5);
+  background-color: rgba(50, 131, 155, 0.4);
+  border: 5px solid rgb(4, 80, 80);
+  border-radius: 20%;
+  position: relative;
+  width: 60%;
+  height: 55vh;
+  left: 5%;
+  /*animation: slidefromleft 1s ease-in forwards;*/
+}
+#lewaramkaniewidoczna {
+  box-shadow: 0px 0px 60px 15px rgba(0, 0, 0, 0.5);
+  background-color: rgba(50, 131, 155, 0.4);
+  border: 5px solid rgb(4, 80, 80);
+  border-radius: 20%;
+  position: relative;
+  width: 60%;
+  height: 55vh;
+  left: 5%;
+  opacity: 0;
+}
+/* Kontener na slowo "Czesc"*/
+#ramkaprzywitanie {
+  width: 100%;
+  height: 2vh;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+/* edycja slowa "Czesc"*/
+#przywitanie {
+  font-size: 600%;
+  text-shadow: -4px 5px 25px black;
+  color: rgba(162, 212, 216, 0.8);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 500;
+}
+/* Kontener na tekst w lewej ramce*/
+#ramkatekstST {
+  width: 100%;
+  position: relative;
+  top: 150px;
+  text-align: justify;
+  padding: 0% 5%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 172%;
+  animation: fadeIn 1s ease-in-out forwards;
+  color: rgb(220, 224, 217);
+  text-shadow: -1px 1px 5px;
+}
+/* edycja przycisku w lewej ramce*/
+#btndalej {
+  width: 20%;
+  height: 6vh;
+  position: relative;
+  top: 25vh;
+  left: 40%;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 5px rgb(7, 57, 77);
+  font-size: 100%;
+  font-weight: 600;
+  background-image: radial-gradient(
+    circle at 58.96% 41.04%,
+    #f9fafa 0,
+    #e6f2f3 16.67%,
+    #d2e9ed 33.33%,
+    #bddfe7 50%,
+    #a8d5e2 66.67%,
+    #94cbdf 83.33%,
+    #83c2dc 100%
+  );
+}
+/* powiekszenie przycisku przy najechaniu na niego kursorem*/
+#btndalej:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+/* pojawienie się prawej ramki po nacisnieciu przycisku w lewej ramce */
+#prawaramkaniewidoczna {
+  opacity: 0;
+}
+#prawaramkawidoczna {
+  width: 60%;
+  height: 55vh;
+  position: relative;
+  margin-top: -55vh;
+  box-shadow: 0px 0px 60px 15px rgba(0, 0, 0, 0.5);
+  background-color: rgba(50, 131, 155, 0.4);
+  border-radius: 20%;
+  border: 5px solid rgb(4, 80, 80);
+  padding: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 172%;
+  text-align: justify;
+  line-height: 1.5;
+  color: rgb(220, 224, 217);
+  text-shadow: -1px 1px 5px;
+  opacity: 1;
+  left: 5%;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+#prawaramkawidoczna a {
+  color: white;
+}
+/* slowko zapraszam */
+#zapraszam {
+  font-size: 200%;
+  text-align: center;
+}
+/* edycja panelu bocznego na stronie glownej */
+#panelboczny {
+  background: rgb(58, 202, 228, 0.5);
+  font-family: "Hind Siliguri", serif;
+  font-weight: 500;
+  float: left;
+  width: 20%;
+  border: 5px solid rgb(46, 44, 44, 0.7);
+  height: 81vh;
+  margin-left: 10%;
+  border-top-left-radius: 20px;
+  box-shadow: 0 1px 10px rgb(36, 35, 35);
+  padding-top: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+#przydatnematerialy {
+  color: white;
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+#ramkalistapanelboczny {
+  margin-top: 3vh;
+  font-size: 20px;
+  list-style-type: none;
+  line-height: 5vh;
+}
+.listapanelboczny {
+  border-bottom: 1px solid black;
+}
+
+.listapanelboczny a {
+  text-decoration: none;
+  color: white;
+}
+.listapanelboczny:nth-child(4) a{
+    color: rgb(58, 58, 52);
+    font-weight: 800;
+}
+.listapanelboczny a:hover {
+  text-decoration: underline;
+}
+
+/* C E N N I K */
+
+#cennik {
+  font-family: "Hind Siliguri", serif;
+  line-height: 4vh;
+  text-align: center;
+  margin-top: 2vh;
+  color: white;
+}
+#napis1 {
+  padding: 3vh;
+  border: 4px solid black;
+  box-shadow: 0 0 10px black;
+  border-radius: 70px;
+  width: 40%;
+  margin-left: 30%;
+  font-size: 30px;
+}
+.czaskoszt1 {
+  display: inline-block;
+  border: 2px solid black;
+  box-shadow: 0px 0px 10px black;
+  padding: 10px;
+  margin-top: 2vh;
+}
+.napis23 {
+  margin-top: 2vh;
+}
+
+/* K O N T A K T */
+
+#kontakt {
+  font-family: "Hind Siliguri", sans-serif;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 45px;
+  text-align: center;
+  height: 81vh;
+  width: 100%;
+  color: white;
+}
+.socialmedia {
+  height: 19vh;
+  float: left;
+  width: 10%;
+  margin-left: 17%;
+  margin-top: 15vh;
+}
+#ramkasocialmedia {
+  height: 50vh;
+  width: 100%;
+}
+.socialmedia:nth-child(1) {
+  background-image: url("zdjecia/fblogo.png");
+  background-size: cover;
+  box-shadow: 0 0 15px rgb(16, 34, 114);
+  border-radius: 23%;
+}
+.socialmedia:nth-child(2) {
+  background-image: url("zdjecia/iglogo.png");
+  background-size: cover;
+  box-shadow: 0 0 15px rgb(218, 51, 162);
+  border-radius: 23%;
+}
+.socialmedia:nth-child(3) {
+  background-image: url("zdjecia/mail.png");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 17px;
+  padding-top: 14vh;
+  text-decoration: underline;
+}
+.socialmedia a {
+  display: block;
+  width: 100%;
+  height: 19vh;
+}
+#reklama {
+  position: absolute;
+  bottom: 0;
+  margin-left: 40%;
+  font-size: 20px;
+}
+#reklama a {
+  color: white;
+}
+
+/* O  M N I E */
+#omnie {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 40px;
+  width: 100%;
+  height: 81vh;
+  padding: 1%;
+  padding-left: 3%;
+  color: white;
+  font-weight: 600;
+}
+.napisomnie {
+  font-weight: 400;
+  font-size: 30px;
+  padding-right: 30%;
+  text-align: justify;
+}
+.napisomnie:nth-child(1) {
+  margin-top: 5vh;
+}
+img {
+  width: 80%;
+}
+/* Q U I Z Z */
+
+#quiz {
+  width: 100%;
+  height: 81vh;
+  display: flex;
+  justify-content: center;
+}
+#ramkapytanie {
+  box-shadow: 0 0 10px black;
+  border: 5px solid rgb(4, 80, 80);
+  height: 75vh;
+  width: 80%;
+  background-color: rgba(50, 131, 155, 0.4);
+  border-top: none;
+  border-radius: 10%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  text-align: justify;
+  font-family: "Hind Siliguri", sans-serif;
+  padding: 7vh;
+  padding-top: 0;
+  color: white;
+  font-weight: 500;
+}
+.opisquizz:nth-child(1) {
+  font-size: 40px;
+  line-height: 10vh;
+  text-align: center;
+  text-shadow: -2px 2px 5px;
+}
+.opisquizz:nth-child(2) {
+  font-size: 25px;
+}
+#rozpocznijquizzramka {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+#rozpocznijquizz {
+  box-shadow: 0 0 10px black;
+  background-image: radial-gradient(
+    circle at 58.96% 41.04%,
+    #f9fafa 0,
+    #e6f2f3 16.67%,
+    #d2e9ed 33.33%,
+    #bddfe7 50%,
+    #a8d5e2 66.67%,
+    #94cbdf 83.33%,
+    #83c2dc 100%
+  );
+  border: none;
+  width: 25%;
+  height: 10vh;
+  margin-top: 0;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 30%;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 500;
+}
+#rozpocznijquizz:hover {
+  transform: scale(1.1);
+}
+.pytanie {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  font-family: "Hind Siliguri", sans-serif;
+}
+#foto1 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 30vh;
+  border: 1px solid rebeccapurple;
+}
+#foto1 img {
+  width: 100%;
+  height: 100%;
+}
+.odpowiedzi {
+  margin-top: 6vh;
+  width: 100%;
+}
+.odp {
+  box-shadow: 0 0 10px black;
+  float: left;
+  border: 1px solid black;
+  width: 5%;
+  text-align: center;
+  margin-left: 16%;
+  background: rgb(63, 94, 251, 0.4);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(61, 159, 211, 1) 77%,
+    rgba(61, 163, 208, 1) 82%
+  );
+  border-radius: 5px;
+  color: black;
+}
+.odp:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.nastepnepytanie {
+  box-shadow: 0 0 10px black;
+  margin-top: 6vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 15%;
+  height: 8vh;
+  border: 1px solid black;
+  background: rgb(63, 94, 251, 0.4);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(61, 159, 211, 1) 77%,
+    rgba(61, 163, 208, 1) 82%
+  );
+}
+.nastepnepytanie:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+#foto2 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 10vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto2 img {
+  width: 100%;
+  height: 100%;
+}
+#foto3 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto3 img {
+  width: 100%;
+  height: 100%;
+}
+#foto4 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto4 img {
+  width: 100%;
+  height: 100%;
+}
+#foto5 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto5 img {
+  width: 100%;
+  height: 100%;
+}
+#foto6 {
+  box-shadow: 0 0 10px black;
+  width: 55%;
+  height: 13vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto6 img {
+  width: 100%;
+  height: 100%;
+}
+#foto7 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 19vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto7 img {
+  width: 100%;
+  height: 100%;
+}
+#foto8 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 23.5vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto8 img {
+  width: 100%;
+  height: 100%;
+}
+#foto9 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 12vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto9 img {
+  width: 100%;
+  height: 100%;
+}
+#foto10 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto10 img {
+  width: 100%;
+  height: 100%;
+}
+#foto11 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto11 img {
+  width: 100%;
+  height: 100%;
+}
+#foto12 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 25vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto12 img {
+  width: 100%;
+  height: 100%;
+}
+#foto13 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 29vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto13 img {
+  width: 100%;
+  height: 100%;
+}
+#foto14 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 24vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto14 img {
+  width: 100%;
+  height: 100%;
+}
+#foto15 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 12vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto15 img {
+  width: 100%;
+  height: 100%;
+}
+#foto16 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 25vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto16 img {
+  width: 100%;
+  height: 100%;
+}
+
+#foto17 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 23vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto17 img {
+  width: 100%;
+  height: 100%;
+}
+#foto18 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 22vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto18 img {
+  width: 100%;
+  height: 100%;
+}
+#foto19 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 15vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto19 img {
+  width: 100%;
+  height: 100%;
+}
+#foto20 {
+  box-shadow: 0 0 10px black;
+  width: 48%;
+  height: 27vh;
+  margin-top: 5vh;
+  border: 1px solid rebeccapurple;
+}
+#foto20 img {
+  width: 100%;
+  height: 100%;
+}
+#koniec {
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  line-height: 10vh;
+  font-family: "Hind Siliguri", sans-serif;
+}
+#procentramka {
+  margin-top: 5vh;
+  border: 1px solid black;
+  border-radius: 50px;
+  height: 8vh;
+  width: 70%;
+  box-shadow: 0 0 15px black;
+}
+#procent {
+  display: flex;
+  width: 90%;
+  border: none;
+  height: 100%;
+  border-radius: 50px;
+  background: rgb(149, 14, 4);
+  background: linear-gradient(
+    125deg,
+    rgba(149, 14, 4, 1) 0%,
+    rgba(186, 10, 10, 1) 35%,
+    rgba(237, 19, 8, 1) 100%
+  );
+  justify-content: flex-end;
+  align-items: center;
+}
+#tekst1 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5vh;
+  font-size: 35px;
+  line-height: normal;
+  display: block;
+}
+#tekst2 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5vh;
+  font-size: 35px;
+  line-height: normal;
+  display: none;
+}
+#tekst3 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5vh;
+  font-size: 35px;
+  line-height: normal;
+  display: none;
+}
+#tekst4 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5vh;
+  font-size: 35px;
+  line-height: normal;
+  display: none;
+}
+#tekst5 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5vh;
+  font-size: 35px;
+  line-height: normal;
+  display: none;
+}
+@media screen and (max-width: 1918px) {
+  #ramkaLewanaglowek {
+    width: 26%;
+  }
+  #btndalej {
+    top: 20vh;
+  }
+}
+@media screen and (max-width: 1845px) {
+  #ramkaLewanaglowek {
+    width: 27%;
+  }
+  #ramkaPrawanaglowek {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1839px) {
+  #lewaramkawidoczna {
+    width: 65%;
+  }
+  #prawaramkawidoczna {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1777px) {
+  #ramkaLewanaglowek {
+    width: 28%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 22%;
+  }
+  .socialmedia {
+    width: 11%;
+  }
+}
+@media screen and (max-width: 1764px) {
+  #ramkalistanaglowek .listanaglowek {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media screen and (max-width: 1764px) {
+  .napisnaglowek {
+    font-size: 160%;
+  }
+  .napisnaglowek span {
+    text-decoration: underline 2px;
+  }
+}
+@media screen and (max-width: 1683px) {
+  #zapraszam {
+    font-size: 180%;
+  }
+}
+@media screen and (max-width: 1604px) {
+  #ramkaLewanaglowek {
+    width: 30%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 20%;
+  }
+  #przydatnematerialy {
+    font-size: 25px;
+  }
+  #ramkalistapanelboczny {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 1570px) {
+  #ramkatekstST {
+    font-size: 170%;
+  }
+  #prawaramkawidoczna {
+    font-size: 160%;
+  }
+}
+@media screen and (max-width: 1555px) {
+  #ramkatekstST {
+    font-size: 160%;
+  }
+  #napis1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1524px) {
+  .listanaglowek a {
+    font-size: 25px;
+  }
+  #ramkaLewanaglowek {
+    width: 33%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 17%;
+  }
+}
+@media screen and (max-width: 1509px) {
+  #lewaramkawidoczna {
+    width: 75%;
+  }
+  #prawaramkawidoczna {
+    width: 75%;
+  }
+  .socialmedia {
+    width: 12%;
+  }
+}
+@media screen and (max-width: 1375px) {
+  #ramkaLewanaglowek {
+    width: 35%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 15%;
+  }
+  .listanaglowek a {
+    font-size: 23px;
+  }
+  #panelboczny {
+    width: 23%;
+    margin-left: 7%;
+  }
+  #napis1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1297px) {
+  .napisnaglowek {
+    font-size: 140%;
+  }
+  #ramkaLewanaglowek {
+    width: 35%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 15%;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #prawaramkawidoczna {
+    font-size: 150%;
+  }
+}
+@media screen and (max-width: 1297px) {
+  #imie {
+    padding-top: 5vh;
+  }
+}
+@media screen and (max-width: 1222px) {
+  #lewaramkawidoczna {
+    width: 76%;
+  }
+  #prawaramkawidoczna {
+    width: 76%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 12%;
+  }
+  .listanaglowek a {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1205px) {
+  #ramkanaglowek {
+    height: 15vh;
+  }
+  #lewaramkawidoczna {
+    width: 85%;
+  }
+  #prawaramkawidoczna {
+    width: 85%;
+  }
+  #imie {
+    padding-top: 1vh;
+  }
+  #panelboczny {
+    height: 85vh;
+  }
+}
+@media screen and (max-width: 1180px) {
+  #przydatnematerialy {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 1126px) {
+  #imie {
+    font-size: 160%;
+    padding-top: 1vh;
+  }
+  #ramkaLewanaglowek {
+    width: 43%;
+  }
+  #ramkaPrawanaglowek {
+    margin-left: 0;
+    width: 57%;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #napis1 {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 1067px) {
+  #przydatnematerialy {
+    font-size: 15px;
+  }
+
+  #ramkatekstST {
+    font-size: 130%;
+  }
+  #przywitanie {
+    font-size: 400%;
+  }
+  #ramkatekstST {
+    top: 120px;
+  }
+  #btndalej {
+    width: 30%;
+    left: 35%;
+    top: 20vh;
+  }
+  #lewaramkawidoczna {
+    height: 50vh;
+  }
+  #prawaramkawidoczna {
+    height: 50vh;
+    font-size: 130%;
+  }
+}
+@media screen and (max-width: 923px) {
+  .napisnaglowek {
+    font-size: 125%;
+  }
+  .listanaglowek a {
+    font-size: 15px;
+  }
+  .listapanelboczny a {
+    font-size: 13px;
+  }
+  #btndalej {
+    top: 18vh;
+  }
+}
+@media screen and (max-width: 867px) {
+  #prawaramkawidoczna {
+    font-size: 115%;
+  }
+}
+@media screen and (max-width: 826px) {
+  .napisnaglowek {
+    font-size: 110%;
+  }
+  #imie {
+    font-size: 140%;
+    padding-top: 3vh;
+  }
+  #btndalej {
+    top: 18vh;
+  }
+}
+@media screen and (max-width: 784px) {
+  #btndalej {
+    top: 16vh;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+  #ramkaPrawanaglowek {
+    width: 30%;
+  }
+  #ramkaLewanaglowek {
+    width: 70%;
+  }
+  #prawaramkawidoczna {
+    font-size: 100%;
+    height: 45vh;
+  }
+  #ramkatekstST {
+    font-size: 110%;
+  }
+  #lewaramkawidoczna {
+    height: 45vh;
+  }
+}
+
+/* T E L F O N Y */
+@media screen and (max-width: 430px) {
+  #foto1 {
+    width: 90%;
+    height: 20vh;
+    margin-top: 3vh;
+  }
+  #foto2 {
+    width: 90%;
+    height: 6vh;
+    margin-top: 5vh;
+  }
+  #foto3 {
+    width: 90%;
+    height: 10vh;
+    margin-top: 5vh;
+  }
+  #foto4 {
+    width: 90%;
+    height: 9.5vh;
+    margin-top: 5vh;
+  }
+  #foto5 {
+    width: 90%;
+    height: 9.5vh;
+    margin-top: 5vh;
+  }
+  #foto6 {
+    width: 90%;
+    height: 8vh;
+    margin-top: 5vh;
+  }
+  #foto7 {
+    width: 90%;
+    height: 11.8vh;
+    margin-top: 5vh;
+  }
+  #foto8 {
+    width: 90%;
+    height: 13vh;
+    margin-top: 5vh;
+  }
+  #foto9 {
+    width: 90%;
+    height: 8vh;
+    margin-top: 5vh;
+  }
+  #foto10 {
+    width: 90%;
+    height: 9.5vh;
+    margin-top: 5vh;
+  }
+  #foto11 {
+    width: 90%;
+    height: 90px;
+    margin-top: 5vh;
+  }
+  #foto12 {
+    width: 90%;
+    height: 15vh;
+    margin-top: 5vh;
+  }
+  #foto13 {
+    width: 90%;
+    height: 18vh;
+    margin-top: 5vh;
+  }
+  #foto14 {
+    width: 90%;
+    height: 14vh;
+    margin-top: 5vh;
+  }
+  #foto15 {
+    width: 90%;
+    height: 7.5vh;
+    margin-top: 5vh;
+  }
+  #foto16 {
+    width: 90%;
+    height: 17vh;
+    margin-top: 5vh;
+  }
+  #foto17 {
+    width: 90%;
+    height: 13vh;
+    margin-top: 5vh;
+  }
+  #foto18 {
+    width: 90%;
+    height: 12vh;
+    margin-top: 5vh;
+  }
+  #foto19 {
+    width: 90%;
+    height: 9.5vh;
+    margin-top: 5vh;
+  }
+  #foto20 {
+    width: 90%;
+    height: 16vh;
+    margin-top: 5vh;
+  }
+  #procent {
+    font-size: 25px;
+  }
+  #tekst1 {
+    font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3vh;
+  }
+  #tekst2 {
+    font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3vh;
+  }
+  #tekst3 {
+    font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3vh;
+  }
+  #tekst4 {
+    font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3vh;
+  }
+  #tekst5 {
+    font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3vh;
+  }
+  #koniec {
+    font-size: 35px;
+    line-height: 8vh;
+  }
+  #procentramka {
+    width: 95%;
+  }
+  .pytanie:nth-child(19) .odp {
+    width: 30%;
+    margin-left: 13%;
+  }
+  .nastepnepytanie {
+    width: 45%;
+  }
+  .odp {
+    width: 12%;
+    margin-left: 11%;
+  }
+  #foto {
+    width: 105%;
+    height: 20vh;
+  }
+  .pytanie {
+    font-size: 30px;
+  }
+  #rozpocznijquizz {
+    width: 40%;
+    height: 7vh;
+    font-size: 17px;
+  }
+  #rozpocznijquizzramka {
+    margin-top: 5vh;
+  }
+  .opisquizz:nth-child(1) {
+    font-size: 30px;
+    line-height: 5vh;
+  }
+  .opisquizz:nth-child(2) {
+    margin-top: 5vh;
+    font-size: 20px;
+  }
+  #ramkapytanie {
+    height: 63vh;
+    width: 100%;
+    padding: 2vh;
+  }
+  .listapanelboczny:nth-child(4) {
+    border: none;
+  }
+  #omnie {
+    font-size: 25px;
+  }
+  img {
+    width: 100%;
+    height: 1.5vh;
+  }
+  .napisomnie {
+    font-size: 17px;
+    padding-right: 3%;
+  }
+  #reklama {
+    margin-left: 10%;
+  }
+  #kontakt {
+    font-size: 20px;
+  }
+  .socialmedia:nth-child(1) {
+    margin-left: 10%;
+  }
+  .socialmedia:nth-child(3) {
+    clear: both;
+
+    margin-left: 20%;
+    margin-top: 10%;
+    width: 57%;
+  }
+  .socialmedia {
+    margin-left: 17%;
+    width: 31%;
+    height: 11vh;
+  }
+  .socialmedia a {
+    height: 11vh;
+  }
+  #napis1 {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 15px;
+  }
+  #cennik {
+    line-height: 3vh;
+  }
+  #krzyzyk {
+    width: 5%;
+    height: 3vh;
+    position: absolute;
+    right: 5px;
+    display: none;
+  }
+  .krzyzyki {
+    position: absolute;
+    top: 1vh;
+    width: 90%;
+    height: 0.5vh;
+    background-color: black;
+    border-radius: 50%;
+  }
+  .krzyzyki:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .krzyzyki:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+  #przyciskmenu {
+    width: 12%;
+    height: 5vh;
+    position: absolute;
+    right: 4%;
+    top: 8vh;
+    padding-left: 1%;
+  }
+  .przyciskmenupaski {
+    box-shadow: 0 0 3px black;
+    width: 90%;
+    height: 20%;
+    background: #86cfe5;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+  .napisnaglowek {
+    text-shadow: -2px 2px 1px rgb(27, 32, 6);
+  }
+  .listanaglowek a {
+    font-size: 12px;
+  }
+  #ramkalistanaglowek {
+    padding: 7px;
+  }
+  #ramkaPrawanaglowek {
+    width: 40%;
+    display: none;
+    box-shadow: 0 0 10px black;
+    border-radius: 7%;
+  }
+  #ramkaLewanaglowek {
+    width: 60%;
+  }
+  .napisnaglowek {
+    font-size: 80%;
+  }
+  #imie {
+    font-size: 100%;
+    padding-top: 4vh;
+  }
+  #panelboczny {
+    box-shadow: 0 0 10px black;
+    clear: both;
+    width: 100%;
+    height: 23vh;
+    border-radius: 0;
+    margin-left: 0;
+    border: 3px solid rgb(46, 44, 44, 0.7);
+    padding-top: 0;
+    margin-top: -3vh;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #lewaramkawidoczna {
+    width: 90%;
+  }
+  #ramkatekstST {
+    font-size: 100%;
+    top: 90px;
+  }
+  #przywitanie {
+    font-size: 300%;
+  }
+  #btndalej {
+    top: 14vh;
+    width: 40%;
+    left: 30%;
+  }
+  #STnapis {
+    float: left;
+    width: 100%;
+    height: 65vh;
+  }
+  #prawaramkaniewidoczna {
+    display: none;
+  }
+  #prawaramkawidoczna {
+    font-size: 80%;
+    padding-top: 4vh;
+    width: 90%;
+  }
+  #przydatnematerialy {
+    font-size: 20px;
+    border-bottom: 2px solid black;
+  }
+  #ramkalistapanelboczny {
+    text-align: center;
+    margin-top: 0vh;
+    font-size: 30px;
+    list-style-type: none;
+    line-height: 4vh;
+  }
+  #ramkalistanaglowek {
+    width: 100%;
+    right: 5px;
+    bottom: -6px;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #ramkalistanaglowek .listanaglowek:nth-child(4) {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 375px) {
+    #procentramka{
+        margin-top: 3vh;
+    }
+    #koniec{
+        font-size: 30px;
+        line-height: 5vh;
+    }
+    .nastepnepytanie{
+        font-size: 15px;
+    }
+    .opisquizz:nth-child(2) {
+        font-size: 18px;
+      }
+  #panelboczny {
+    height: 23.5vh;
+    margin-top: -4vh;
+  }
+  .socialmedia:nth-child(3) {
+    width: 64%;
+  }
+  .socialmedia {
+    width: 34%;
+    height: 11.5vh;
+  }
+  .socialmedia a {
+    height: 11.5vh;
+  }
+  #reklama {
+    margin-left: 6%;
+  }
+  .listanaglowek a {
+    font-size: 11px;
+  }
+  #ramkaPrawanaglowek {
+    width: 35%;
+  }
+  #ramkaLewanaglowek {
+    width: 65%;
+  }
+  #ramkalistanaglowek {
+    right: 5px;
+  }
+}
+@media screen and (max-width: 390px) {
+  #reklama {
+    font-size: smaller;
+  }
+  .socialmedia:nth-child(3) {
+    width: 60%;
+  }
+  .socialmedia {
+    width: 32%;
+  }
+}
+@media screen and (max-height: 667px) {
+  #imie {
+    padding-top: 3vh;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  #zapraszam {
+    font-size: 150%;
+  }
+  #ramkatekstST {
+    font-size: 90%;
+  }
+  #btndalej {
+    transform: scale(0.7);
+    font-size: 90%;
+  }
+  #panelboczny {
+    height: 25vh;
+    margin-top: -5vh;
+  }
+  .socialmedia {
+    margin-top: 5vh;
+    width: 28.5%;
+    height: 11.5vh;
+  }
+}
+@media screen and (max-height: 736px) {
+  #btndalej {
+    transform: scale(0.7);
+    font-size: 90%;
+  }
+  #ramkalistanaglowek .listanaglowek {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  #panelboczny {
+    height: 25vh;
+    margin-top: -5vh;
+  }
+  .socialmedia {
+    margin-left: 25%;
+    margin-top: 5vh;
+    width: 27.5%;
+    height: 11.5vh;
+  }
+  #kontakt {
+    font-size: 19px;
+  }
+  .socialmedia:nth-child(3) {
+    margin-left: 22%;
+  }
+  #reklama {
+    font-size: smaller;
+    margin-left: 14%;
+  }
+}
